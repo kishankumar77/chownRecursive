@@ -10,16 +10,16 @@ Syntax:
 2. Following Changes needs to be made after the tar ball is extracted to the local directory:
 
 chowndir.pl script -  is dependent on BBSur.pm and BBInit.pm, so library path to be changed to your local lib path where you extract the tar ball chownExt.Cust2.tar:
-i.e change  this line in chowndir.pl "use lib '/u/dummyuser/chownExt/lib';"
+example: if you extract the tar at  /home/user/chownExt then change line "use lib '/u/dummyuser/chownExt/lib';" to "use lib '/home/user/chownExt/lib';" in chowndir.pl
 
 BBSur.pm -  is dependent on  BBInit.pm, so library path to be changed to your local lib path where you extract the tar ball chownExt.Cust2.tar:
-i.e change this line in BBSur.pm "use lib '/u/dummy/chownExt/lib';"
+example: if you extract the tar to /home/user/chownExt then change line "use lib '/u/dummy/chownExt/lib';" to "use lib '/home/user/chownExt/lib';" in BBSur.pm
  
 BBInit.pm -
 The following tools path needs to be changed to your local paths 
 our $BB_CMD_SUR = '/u/dummyuser/chownExt/sur';
 our $BB_LOGFILE = 'logfile';
-our $BB_PFIND = '/u/dummyuser/chownExt/pfind';
+our $BB_PFIND = '/u/dummyuser/chownExt/pfind';  
 our $BB_FILELIST                   = ".filelist";
 our $BB_CMD_CAT                    = "/bin/cat";
 our $BB_CMD_TR                     = "/usr/bin/tr";
@@ -28,7 +28,7 @@ our $BB_CMD_CUSTOM_CHOWN           = "/u/dummyuser/chownExt/simple_chown";
 
 
 sur_dispatch -  is dependent on  BBInit.pm, so library path to be changed to your local lib path where you extract the tar ball chownExt.Cust2.tar
-i.e change this line in BBSur.pm "use lib '/u/dummy/chownExt/lib';"
+example: if you extract the tar to /home/user/chownExt then change line "use lib '/u/dummy/chownExt/lib';" to "use lib '/home/user/chownExt/lib';" in sur_dispatch
 
 sur.c
 sur.c:strcat (surcmd, "/u/dummyuser/chownExt/sur_dispatch");
